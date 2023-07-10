@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Rock Paper Scissors - The Odin Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+      <h3>Play against the computer</h3>
+      <h3>First to 5 wins</h3>
+      <div class="buttons-container">
+        <button onclick="playGame('Rock')" class="choice-btn red-border">
+          <img src="./images/rock-icon.png" alt="Button to choose Rock" />
+        </button>
+        <button onclick="playGame('Paper')" class="choice-btn green-border">
+          <img src="./images/paper-icon.svg" alt="Button to choose Paper" />
+        </button>
+        <button onclick="playGame('Scissors')" class="choice-btn yellow-border">
+          <img src="./images/scissors-icon.svg" alt="Button to choose Scissors"/>
+        </button>
+      </div>
+      <p class="computer-choice"></p>
+      <p class="round-outcome"></p>
+      <div class="score-container">
+        <p>
+          You: <span class="player-score">0</span> Computer:
+          <span class="computer-score">0</span>
+        </p>
+      </div>
+      <div class="reset-game" hidden>
+        <p>You <span class="game-outcome"></span></p>
+        <button class="reset-btn" onclick="resetGame()">Try Again?</button>
+      </div>
+    </div>
+
+    <script src="js/rps-game.js"></script>
+  </body>
+</html>

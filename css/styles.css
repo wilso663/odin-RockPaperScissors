@@ -1,0 +1,178 @@
+:root {
+  --clr-red: rgba(250,0,0,1);
+  --clr-red-shadow: rgba(250,0,0,0.7);
+  --clr-blank: rgba(250,0,0,0);
+
+  --clr-bright-green: rgba(173, 255, 47,1);
+  --clr-bright-green-shadow: rgba(173,255,47,0.7);
+  --clr-bright-green-blank: rgba(250,0,0,0);
+
+  --clr-yellow: rgba(255, 255, 0,1);
+  --clr-yellow-shadow: rgba(255,255,0,0.7);
+  --clr-yellow-blank: rgba(255,255,0,0);
+
+  --btn-red: var(--clr-red);
+  --btn-green: var(--clr-bright-green);
+  --btn-yellow: var(--clr-yellow);
+
+  --text-primary: rgba(255,255,255,1);
+}
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #032338;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+img, svg {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+}
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.green-border {
+  border: 5px solid var(--btn-green);
+  box-shadow: 0 0 0 0 var(--btn-green);
+}
+.yellow-border {
+  border: 5px solid var(--btn-yellow);
+  box-shadow: 0 0 0 0 var(--btn-yellow);
+}
+.red-border {
+  border: 5px solid var(--btn-red);
+  box-shadow: 0 0 0 0 var(--btn-red);
+}
+.choice-btn {
+  width: 100px;
+  height: 100px;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s;
+}
+.choice-btn img {
+  height: 60%;
+  width: 60%;
+}
+.choice-btn:hover{
+  opacity: .8;
+  transform: scale(1.25);
+}
+/* Choice button animations for hover and on click */
+/* 
+   Pulse looking effect is made by growing a box shadow's radius
+   and lowering the opacity to .7 at 70% 
+   then turning the opacity to 0
+*/
+@keyframes pulse-red {
+  0%{
+    box-shadow: 0 0 0 0 var(--clr-red-shadow);
+  }
+  70% {
+    box-shadow: 0 0 0 25px var(--clr-blank);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--clr-blank);
+  }
+}
+.red-pulse {
+  animation: pulse-red 2s;
+}
+@keyframes pulse-yellow {
+  0%{
+    box-shadow: 0 0 0 0 var(--clr-yellow-shadow);
+  }
+  70% {
+    box-shadow: 0 0 0 25px var(--clr-blank);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--clr-blank);
+  }
+}
+.yellow-pulse {
+  animation: pulse-yellow 2s;
+}
+@keyframes pulse-green {
+  0%{
+    box-shadow: 0 0 0 0 var(--clr-bright-green-shadow);
+  }
+  70% {
+    box-shadow: 0 0 0 25px var(--clr-blank);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--clr-blank);
+  }
+}
+.green-pulse {
+  animation: pulse-green 2s;
+}
+/* End of choice button animations */
+.outcome {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.625rem;
+}
+.score-container {
+  font-size: 1.5rem;
+}
+.score-container p {
+  margin-top: .5rem;
+}
+.player-score {
+  margin-right: 1rem;
+}
+.reset-btn {
+  align-items: center;
+  appearance: none;
+  background-color: #74fd3e;
+  background-image: linear-gradient(1deg, #2d37f7, #14f396 99%);
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: .3125rem;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: bold;
+  height: auto;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 6px 20px;
+  text-align: center;
+  transition: background-color .2s,background-position .2s;
+}
+
+.reset-btn:active,
+.reset-btn:focus {
+  outline: none;
+}
+
+.reset-btn:hover {
+  background-position: -20px -20px;
+}
+
+.reset-btn:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
